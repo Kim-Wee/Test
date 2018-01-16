@@ -4,16 +4,19 @@
 using namespace std;
 #include "Tree.h"
 
+//Constructor
 Tree::Tree() {
-	// TODO Auto-generated constructor stub
 	root = NULL;
 }
+
+// Insert Function
 void Tree::insert(ItemType item)
 {
 	insert(root, item);
 }
 void Tree::insert(Node* &node,ItemType item)
 {
+	//no existing tree
 	if (node == NULL)
 	{
 		node = new Node;
@@ -21,13 +24,16 @@ void Tree::insert(Node* &node,ItemType item)
 		node->left = NULL;
 		node->right = NULL;
 	}
+	// existing tree available
 	else
 	{
 		item < node->item ? insert(node->left,item) : insert(node->right,item);
 		node = Balance(node,item);
 	}
-
 }
+
+
+//Remove Function
 void Tree::remove(ItemType item)
 {
 	remove(root,item);
@@ -36,12 +42,14 @@ void Tree::remove(Node* &node,ItemType item)
 {
 	if (node != NULL)
 	{
+		//recursive function left/right rotation to search for exact data.
 		if (item < node->item)
 			remove(node->left,item);
 		else if (item > node->item)
 			remove(node->right,item);
 		else
 		{
+			//Check if child node(s) is/are available
 			if((node->left == NULL) || (node->right == NULL))
 			{
 				Node* temp = node->left ? node->left : node->right;
@@ -55,8 +63,9 @@ void Tree::remove(Node* &node,ItemType item)
 					*node = * temp;
 				free(temp);
 			}
-			else
+			else //Check if child node both available or not available.
 			{
+				//Search for the next smallest number to replace the number that is being removed.(69 to 74)
 				Node* temp = node->right;
 				while(temp->left != NULL)
 					temp = temp->left;
@@ -65,9 +74,13 @@ void Tree::remove(Node* &node,ItemType item)
 				node->item = n;
 			}
 		}
+		//Balancing
 		node = Balance(node,item);
 	}
 }
+
+
+//GetHeight Function
 int Tree::getHeight(Node* node)
 {
 	if (node == NULL)
@@ -75,6 +88,9 @@ int Tree::getHeight(Node* node)
 	else
 		return 1 + max(getHeight(node->left),getHeight(node->right));
 }
+
+
+//IsBalance function is embedded inside Balance function
 int Tree::isBalance(Node* node)
 {
 	if (node != NULL)
@@ -109,6 +125,8 @@ Node* Tree::Balance(Node* node,ItemType item)
 	}
 	return node;
 }
+
+//RotateLeft Function
 Node* Tree::rotateLeft(Node* node)
 {
 	Node* n = node->right;
@@ -116,6 +134,8 @@ Node* Tree::rotateLeft(Node* node)
 	n->left = node;
 	return n;
 }
+
+//RotateRight Function
 Node* Tree::rotateRight(Node* node)
 {
 	Node* n = node->right;
@@ -123,6 +143,8 @@ Node* Tree::rotateRight(Node* node)
 	n->left = node;
 	return n;
 }
+
+//Search Function
 void Tree::search(ItemType item)
 {
 	search(root, item);
@@ -140,15 +162,20 @@ void Tree::search(Node* node,ItemType item)
 				cout << "L" << endl;
 				search(node->left,item);
 			}
-			else
+			else if (item > node->item)
 			{
 				cout << "R" << endl;
 				search(node->right,item);
 			}
+			else
+				cout << "Not Inside" << endl;
 		}
-
 	}
+	else
+		cout << "No Tree" << endl;
 }
+
+//Display Function
 void Tree::display()
 {
 	display(root);
