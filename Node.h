@@ -1,13 +1,10 @@
-/*
- * Node.h
- *
- *  Created on: Jan 7, 2018
- *      Author: Leroy
- */
-
 #ifndef NODE_H_
 #define NODE_H_
 typedef int ItemType;
+/*
+ * Represents a node used in AVL tree containing item and
+ * pointers to its left and right child
+ */
 struct Node
 {
 	ItemType item;
