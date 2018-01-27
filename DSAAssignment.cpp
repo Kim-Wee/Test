@@ -107,7 +107,7 @@ int main() {
 void menu()
 {
 	 cout << endl;
-	   cout << "DSA Assignment Demo \n";
+	   cout << "DSA Assignment \n";
 	   cout << "--------------------------------\n";
 	   cout << "1. Search for a value \n";
 	   cout << "2. Add a new value \n";
@@ -160,4 +160,3 @@ void removingNode(Tree tree)
 
 
 }
-

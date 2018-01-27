@@ -114,7 +114,7 @@ void Tree::remove(Node* &node,ItemType item)
 				// Checks whether the node is the left or the right
 				Node* temp = node->left ? node->left : node->right;
 				/*
-				 * if there is no child store the value of node and
+				 * if there is no child store the value of node
 				 * remove the specified node by setting it as null
 				*/
 				if (temp == NULL)
@@ -209,24 +209,32 @@ Node* Tree::Balance(Node* node,ItemType item)
 	 *  or lesser
 	 */
 	int b = isBalance(node);
+	//condition where left is heavy
 	if(b > 1)
 	{
-		// Left-Left Rotation
+		//condition where subtree is also left heavy
 		if(isBalance(node->left) > 0)
+			// Left-Left Rotation
 			return rotateLeft(node);
+
+		//condition where subtree is right heavy
 		else
 		{
-			// Left-Right Rotation
+			//Left-Right Rotation
 			Node * c = node->left;
 			node->left = rotateRight(c);
 			return rotateLeft(node);
 		}
 	}
+	//condition where right is heavy
 	else if (b < -1)
 	{
-		// Right-Right Rotation
+		//condition where subtree is also right heavy.
 		if( isBalance(node->right) < 0)
+			// Right-Right Rotation
 			return rotateRight(node);
+
+		//condition where subtree is left heavy.
 		else
 		{
 			//Right-Left Rotation
