@@ -107,7 +107,11 @@ int main() {
 void menu()
 {
 	 cout << endl;
+<<<<<<< HEAD
 	   cout << "DSA Assignment \n";
+=======
+	   cout << "DSA Assignment Demo \n";
+>>>>>>> qwertyqwart12/master
 	   cout << "--------------------------------\n";
 	   cout << "1. Search for a value \n";
 	   cout << "2. Add a new value \n";
@@ -160,3 +164,7 @@ void removingNode(Tree tree)
 
 
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> qwertyqwart12/master

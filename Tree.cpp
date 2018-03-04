@@ -6,7 +6,11 @@ using namespace std;
 #include "Stack.h"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //Constructor
+=======
+// Constructor
+>>>>>>> qwertyqwart12/master
 =======
 // Constructor
 >>>>>>> qwertyqwart12/master
@@ -14,14 +18,20 @@ Tree::Tree() {
 	root = NULL;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 // Insert Function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  * Inserts a new node at root with the specified item
  * Delegates the addition of the specified node to
  * insert(Node* &node,ItemType item)
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 void Tree::insert(ItemType item)
 {
@@ -36,7 +46,11 @@ void Tree::insert(ItemType item)
 void Tree::insert(Node* &node,ItemType item)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//no existing tree
+=======
+	// Insertion of a new node
+>>>>>>> qwertyqwart12/master
 =======
 	// Insertion of a new node
 >>>>>>> qwertyqwart12/master
@@ -63,14 +77,20 @@ void Tree::insert(Node* &node,ItemType item)
 	}
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 //Remove Function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  * Remove the node at from the root and balances the tree
  * Delegates the process to remove(Node* &node,ItemType item)
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 void Tree::remove(ItemType item)
 {
@@ -105,7 +125,11 @@ void Tree::remove(Node* &node,ItemType item)
 		else
 		{
 <<<<<<< HEAD
+<<<<<<< HEAD
 			//Check if child node(s) is/are available
+=======
+			// no child or 1 child
+>>>>>>> qwertyqwart12/master
 =======
 			// no child or 1 child
 >>>>>>> qwertyqwart12/master
@@ -114,7 +138,11 @@ void Tree::remove(Node* &node,ItemType item)
 				// Checks whether the node is the left or the right
 				Node* temp = node->left ? node->left : node->right;
 				/*
+<<<<<<< HEAD
 				 * if there is no child store the value of node
+=======
+				 * if there is no child store the value of node and
+>>>>>>> qwertyqwart12/master
 				 * remove the specified node by setting it as null
 				*/
 				if (temp == NULL)
@@ -130,10 +158,13 @@ void Tree::remove(Node* &node,ItemType item)
 				free(temp);
 			}
 <<<<<<< HEAD
+<<<<<<< HEAD
 			else //Check if child node both available or not available.
 			{
 				//Search for the next smallest number to replace the number that is being removed.(69 to 74)
 =======
+=======
+>>>>>>> qwertyqwart12/master
 			// two child node
 			else
 			{
@@ -143,6 +174,9 @@ void Tree::remove(Node* &node,ItemType item)
 				 * traverse to the right first
 				 * then find the minimun item in its child node
 				 */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 				Node* temp = node->right;
 				while(temp->left != NULL)
@@ -159,6 +193,7 @@ void Tree::remove(Node* &node,ItemType item)
 			}
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		//Balancing
 		node = Balance(node,item);
 	}
@@ -171,10 +206,19 @@ void Tree::remove(Node* &node,ItemType item)
 		node = Balance(node,item);
 	}
 }
+=======
+		// Balance the node after removing the item
+		node = Balance(node,item);
+	}
+}
+>>>>>>> qwertyqwart12/master
 /*
  * get the height of the node
  * increment by comparing the left child node and the right child node
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 int Tree::getHeight(Node* node)
 {
@@ -184,14 +228,20 @@ int Tree::getHeight(Node* node)
 		return 1 + max(getHeight(node->left),getHeight(node->right));
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 //IsBalance function is embedded inside Balance function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  * compare the left child node with the right child node of the specified node
  * return the height difference between the left child and the right child
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 int Tree::isBalance(Node* node)
 {
@@ -212,7 +262,11 @@ Node* Tree::Balance(Node* node,ItemType item)
 	//condition where left is heavy
 	if(b > 1)
 	{
+<<<<<<< HEAD
 		//condition where subtree is also left heavy
+=======
+		// Left-Left Rotation
+>>>>>>> qwertyqwart12/master
 		if(isBalance(node->left) > 0)
 			// Left-Left Rotation
 			return rotateLeft(node);
@@ -220,7 +274,11 @@ Node* Tree::Balance(Node* node,ItemType item)
 		//condition where subtree is right heavy
 		else
 		{
+<<<<<<< HEAD
 			//Left-Right Rotation
+=======
+			// Left-Right Rotation
+>>>>>>> qwertyqwart12/master
 			Node * c = node->left;
 			node->left = rotateRight(c);
 			return rotateLeft(node);
@@ -229,7 +287,11 @@ Node* Tree::Balance(Node* node,ItemType item)
 	//condition where right is heavy
 	else if (b < -1)
 	{
+<<<<<<< HEAD
 		//condition where subtree is also right heavy.
+=======
+		// Right-Right Rotation
+>>>>>>> qwertyqwart12/master
 		if( isBalance(node->right) < 0)
 			// Right-Right Rotation
 			return rotateRight(node);
@@ -246,13 +308,19 @@ Node* Tree::Balance(Node* node,ItemType item)
 	return node;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //RotateLeft Function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  * Rotate Left
  * returns the specified node's left child's right child
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 Node* Tree::rotateLeft(Node* node)
 {
@@ -262,13 +330,19 @@ Node* Tree::rotateLeft(Node* node)
 	return n;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //RotateRight Function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  * Rotate Right
  * returns the specified node's right child's left child
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 Node* Tree::rotateRight(Node* node)
 {
@@ -278,14 +352,20 @@ Node* Tree::rotateRight(Node* node)
 	return n;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 //Search Function
 =======
+=======
+>>>>>>> qwertyqwart12/master
 /*
  *
  * delegates the searching of the item to
  *  search(Node* node,ItemType item)
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 void Tree::search(ItemType item)
 {
@@ -348,6 +428,30 @@ void Tree::displayAscending(Node* node)
 	}
 }
 /*
+<<<<<<< HEAD
+=======
+ * delegates displaying in Inorder traversal
+ *  to displayAscending(Node* node)
+ */
+void Tree::displayAscending()
+{
+	displayAscending(root);
+}
+/*
+ * Traversal from left then traversal to the right
+ * Print out the item afterwards
+ */
+void Tree::displayAscending(Node* node)
+{
+	if(node)
+	{
+		displayAscending(node->left);
+		displayAscending(node->right);
+		cout << node->item << endl;
+	}
+}
+/*
+>>>>>>> qwertyqwart12/master
  * delegates displaying the index node through Level-By-Level
  * Traversal to leveltraversal(Node* node,int userinput)
  */
@@ -390,6 +494,9 @@ void Tree::leveltraversal(Node* node,int userinput)
  * displays the tree
  * delegates drawing of the tree to display(Node* node)
  */
+<<<<<<< HEAD
+>>>>>>> qwertyqwart12/master
+=======
 >>>>>>> qwertyqwart12/master
 void Tree::display()
 {
